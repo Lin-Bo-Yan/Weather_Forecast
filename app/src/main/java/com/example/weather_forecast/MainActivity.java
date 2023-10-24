@@ -22,8 +22,12 @@ import com.example.weather_forecast.model.WeatherData;
 import com.example.weather_forecast.model.WeatherElement;
 import com.example.weather_forecast.tools.CallbackUtils;
 import com.example.weather_forecast.tools.DialogUtils;
+import com.example.weather_forecast.tools.StringUtils;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -45,6 +49,26 @@ public class MainActivity extends AppCompatActivity {
                         android.R.layout.simple_list_item_1,
                         languageSelector);
                 DialogUtils.showLanguageSelection(MainActivity.this,arrayAdapter);
+
+                //自定義訊息框，多個按鈕
+                Gson gson = new Gson();
+                String buttonString = "[\"ok\",\"logout\",\"按鈕3\"]";
+                Type listType = new TypeToken<List<String>>(){}.getType();
+                List<String> buttons = gson.fromJson(buttonString, listType);
+                List<CallbackUtils.noReturn> callbacks = new ArrayList<>();
+                DialogUtils.showDialogWebMessage(MainActivity.this,"標題",buttons,callbacks);
+                for (int i = 0; i < buttons.size(); i++) {
+                    // 建立一個有效最終變數的副本
+                    final int buttonIndex = i;
+                    CallbackUtils.noReturn callback = new CallbackUtils.noReturn() {
+                        @Override
+                        public void Callback() {
+                            String button = buttons.get(buttonIndex);
+                            StringUtils.HaoLog("訊息= " + button);
+                        }
+                    };
+                    callbacks.add(callback);
+                }
             }
         });
     }
