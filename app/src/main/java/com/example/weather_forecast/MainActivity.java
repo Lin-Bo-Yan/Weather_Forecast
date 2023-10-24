@@ -1,11 +1,14 @@
 package com.example.weather_forecast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +20,8 @@ import com.example.weather_forecast.model.Locations;
 import com.example.weather_forecast.model.Time;
 import com.example.weather_forecast.model.WeatherData;
 import com.example.weather_forecast.model.WeatherElement;
+import com.example.weather_forecast.tools.CallbackUtils;
+import com.example.weather_forecast.tools.DialogUtils;
 import com.google.gson.Gson;
 
 import java.util.Calendar;
@@ -24,12 +29,24 @@ import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    TextView countyCity,area,date,temp,weather,comfort,windDirection,windSpeed,humidity,rainfall;
+    private TextView countyCity,area,date,temp,weather,comfort,windDirection,windSpeed,humidity,rainfall;
+    private AppCompatImageView ic_multilingual;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initTextView();
+        ic_multilingual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String[] languageSelector = new String[]{"繁體中文", "簡體中文", "English"};
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(
+                        MainActivity.this,
+                        android.R.layout.simple_list_item_1,
+                        languageSelector);
+                DialogUtils.showLanguageSelection(MainActivity.this,arrayAdapter);
+            }
+        });
     }
 
     @Override
@@ -54,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         windSpeed = findViewById(R.id.windSpeed);
         humidity = findViewById(R.id.humidity);
         rainfall = findViewById(R.id.rainfall);
+        ic_multilingual = findViewById(R.id.ic_multilingual);
     }
 
     private void hsinchuWeatherForecast(CallbackUtils.weatherDataReturn weatherDataReturn){

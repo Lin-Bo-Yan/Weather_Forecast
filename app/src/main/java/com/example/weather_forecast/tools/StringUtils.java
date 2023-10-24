@@ -1,6 +1,9 @@
-package com.example.weather_forecast;
+package com.example.weather_forecast.tools;
 
+import android.app.Activity;
 import android.util.Log;
+
+import com.example.weather_forecast.R;
 
 public class StringUtils {
     final static int MAX_LOG = 800;
@@ -41,6 +44,18 @@ public class StringUtils {
                     Log.d(tag, data.substring(p * MAX_LOG));
                 }
             }
+        }
+    }
+
+    public static String languageRegionCode(Activity activity, String language){
+        if (language.equals(activity.getString(R.string.traditional_chinese))) {
+            return "zh-TW";
+        } else if (language.equals(activity.getString(R.string.simplified_chinese))) {
+            return "zh-CN";
+        } else if (language.equals(activity.getString(R.string.english_language))) {
+            return "en";
+        } else {
+            return "zh-TW";
         }
     }
 }

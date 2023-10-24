@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Weather Forecast</string>
+    <string name="countyCity">Default county and city</string>
+    <string name="area">Default area</string>
+    <string name="date">Default time</string>
+    <string name="temp">Default temperature Celsius</string>
+    <string name="weather_title">Weather</string>
+    <string name="weather">Default weather</string>
+    <string name="comfort_title">Comfort</string>
+    <string name="comfort">Default</string>
+    <string name="windDirection">Default wind direction</string>
+    <string name="windSpeed">Default wind speed</string>
+    <string name="humidity_title">Humidity</string>
+    <string name="humidity">Preset humidity</string>
+    <string name="rainfall_title">Chance of rainfall</string>
+    <string name="rainfall">Preset rainfall rate</string>
+    <string name="change_language">Change language</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="traditional_chinese">traditional Chinese</string>
+    <string name="simplified_chinese">Simplified Chinese</string>
+    <string name="english_language">English</string>
+</resources>

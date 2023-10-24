@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@drawable/gradient_bg">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_multilingual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_multilingual"/>
 
     <LinearLayout
         android:orientation="vertical"
@@ -13,16 +19,15 @@
         android:id="@+id/addressContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <TextView
             android:id="@+id/countyCity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="預設縣市"
+            android:text="@string/countyCity"
             android:textSize="25dp" />
         <TextView
             android:id="@+id/area"
-            android:text="預設區域"
+            android:text="@string/area"
             android:textSize="14dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -38,7 +43,7 @@
             android:id="@+id/date"
             android:textSize="18dp"
             android:layout_gravity="center"
-            android:text="預設時間"
+            android:text="@string/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
@@ -46,7 +51,7 @@
             android:textSize="50sp"
             android:fontFamily="sans-serif-thin"
             android:layout_gravity="center"
-            android:text="預設溫度攝氏"
+            android:text="@string/temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -78,13 +83,13 @@
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:textSize="12dp"
-                    android:text="天氣"
+                    android:text="@string/weather_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/weather"
                     android:textSize="14dp"
-                    android:text="預設天氣"
+                    android:text="@string/weather"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <Space
@@ -108,13 +113,13 @@
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:textSize="12dp"
-                    android:text="舒適度"
+                    android:text="@string/comfort_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/comfort"
                     android:textSize="14dp"
-                    android:text="預設"
+                    android:text="@string/comfort"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <Space
@@ -141,12 +146,12 @@
                     android:id="@+id/windDirection"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="預設風向"
+                    android:text="@string/windDirection"
                     android:textSize="12dp" />
                 <TextView
                     android:id="@+id/windSpeed"
                     android:textSize="14dp"
-                    android:text="預設風速"
+                    android:text="@string/windSpeed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <Space
@@ -179,13 +184,13 @@
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:textSize="12dp"
-                    android:text="濕度"
+                    android:text="@string/humidity_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/humidity"
                     android:textSize="14dp"
-                    android:text="預設濕度"
+                    android:text="@string/humidity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <Space
@@ -209,13 +214,13 @@
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:textSize="12dp"
-                    android:text="降雨機率"
+                    android:text="@string/rainfall_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/rainfall"
                     android:textSize="14dp"
-                    android:text="預設降雨率"
+                    android:text="@string/rainfall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <Space

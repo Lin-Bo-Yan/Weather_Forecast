@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">天气预报</string>
+    <string name="countyCity">预设县市</string>
+    <string name="area">预设区域</string>
+    <string name="date">预设时间</string>
+    <string name="temp">预设温度摄氏</string>
+    <string name="weather_title">天气</string>
+    <string name="weather">预设天气</string>
+    <string name="comfort_title">舒适度</string>
+    <string name="comfort">默认</string>
+    <string name="windDirection">预设风向</string>
+    <string name="windSpeed">预设风速</string>
+    <string name="humidity_title">湿度</string>
+    <string name="humidity">预设湿度</string>
+    <string name="rainfall_title">降雨机率</string>
+    <string name="rainfall">预设降雨率</string>
+    <string name="change_language">变更语言</string>
+    <string name="cancel_button">取消</string>
+    <string name="traditional_chinese">繁体中文</string>
+    <string name="simplified_chinese">简体中文</string>
+    <string name="english_language">English</string>
+</resources>
