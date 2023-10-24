@@ -1,18 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient_bg">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/addressContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/countyCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="預設縣市"
+            android:textSize="25dp" />
+        <TextView
+            android:id="@+id/area"
+            android:text="預設區域"
+            android:textSize="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/overViewContainer"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/date"
+            android:textSize="18dp"
+            android:layout_gravity="center"
+            android:text="預設時間"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/temp"
+            android:textSize="50sp"
+            android:fontFamily="sans-serif-thin"
+            android:layout_gravity="center"
+            android:text="預設溫度攝氏"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detailContainer"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="#3cF1EBF1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:text="天氣"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/weather"
+                    android:textSize="14dp"
+                    android:text="預設天氣"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="#3cF1EBF1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:text="舒適度"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/comfort"
+                    android:textSize="14dp"
+                    android:text="預設"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="#3cF1EBF1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/windDirection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="預設風向"
+                    android:textSize="12dp" />
+                <TextView
+                    android:id="@+id/windSpeed"
+                    android:textSize="14dp"
+                    android:text="預設風速"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="#3cF1EBF1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:text="濕度"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/humidity"
+                    android:textSize="14dp"
+                    android:text="預設濕度"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="#3cF1EBF1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:text="降雨機率"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/rainfall"
+                    android:textSize="14dp"
+                    android:text="預設降雨率"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="#3cF1EBF1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textSize="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/info"
+                    android:textSize="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
