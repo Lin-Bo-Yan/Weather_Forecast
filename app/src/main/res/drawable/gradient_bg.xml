@@ -2,8 +2,10 @@
 <shape
     android:shape="rectangle"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--  angle 值必须是 0、45、90、135、180、225、270 或 315   -->
     <gradient
-        android:angle="80"
+        android:angle="45"
         android:startColor="@color/white"
         android:endColor="@color/pinkish_purple"
         android:type="linear"
