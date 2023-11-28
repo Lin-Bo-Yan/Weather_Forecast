@@ -3,6 +3,7 @@ package com.example.weather_forecast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 
+import android.icu.text.DateFormat;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.os.Handler;
@@ -31,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private TextView countyCity,area,date,temp,weather,comfort,windDirection,windSpeed,humidity,rainfall;
@@ -185,11 +187,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private String nowDate(){
+    private String nowDate() {
         long timestamp = System.currentTimeMillis();
         Date date = new Date(timestamp);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("HH點mm分");
-        String dateString = dateFormat.format(date);
-        return dateString;
+        DateFormat dateFormat = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
+        return dateFormat.format(date);
     }
 }
