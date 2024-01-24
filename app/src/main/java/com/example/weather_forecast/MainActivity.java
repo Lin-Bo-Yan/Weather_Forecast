@@ -23,6 +23,7 @@ import com.example.weather_forecast.model.WeatherData;
 import com.example.weather_forecast.model.WeatherElement;
 import com.example.weather_forecast.tools.CallbackUtils;
 import com.example.weather_forecast.tools.DialogUtils;
+import com.example.weather_forecast.tools.LogUtils;
 import com.example.weather_forecast.tools.StringUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initTextView();
+        LogUtils.setContext(getApplicationContext());
         ic_multilingual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 HttpReturn httpReturn = CloudUtils.iCloudUtils.hsinchuWeatherForecast("東區",timeFromFormat(),timeToFormat());
+                StringUtils.HaoLog(httpReturn);
                 boolean isSuccess = Boolean.parseBoolean(httpReturn.success);
                 if(isSuccess){
                     Gson gson = new Gson();

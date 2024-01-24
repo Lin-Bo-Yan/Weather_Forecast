@@ -18,7 +18,7 @@ public class CloudUtils implements ICloudUtils {
     public HttpReturn hsinchuWeatherForecast(String area, String timeFrom, String timeTo) {
         String authorization = "CWB-E090D0FF-2372-4403-A725-F032945C25C8";
         String elementName = "WeatherDescription";
-        String url = String.format("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-053?Authorization=%s&locationName=%s&elementName=%s&limit=1&offset=0&sort=time&timeFrom=%s&timeTo=%s&format=JSON",authorization,area,elementName,timeFrom,timeTo);
+        String url = String.format("https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-D0047-053?Authorization=%s&locationName=%s&elementName=%s&limit=1&offset=0&sort=time&timeFrom=%s&timeTo=%s&format=JSON",authorization,area,elementName,timeFrom,timeTo);
         Request.Builder request = new Request.Builder()
                 .url(url)
                 .get()
